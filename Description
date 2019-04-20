@@ -1,0 +1,16 @@
+DPI911-Project
+Project Report
+
+Each group is assigned different techniques and tactics in MITRE attack framework. Use this excel sheet to see what techniques and tactics are assigned to you.
+
+Use Caldera or Atomic Red Team or an actual malware in a sandboxed enviornment to initiate the signal. You then identify a high fidelity indicator of compromise either using visibility tools, i.e. Facebook OS Query or Google's GRR, or Splunk filters to detect the incidents.
+
+You must report your progress on the job every session, starting Feb 21st, the status report must have at least the followings:
+
+0- The estimated timeline of your project (you can report it for the first time and then after confirmation, we use this as a reference)
+
+1- What techniques/tactics are covered for that individual status report?
+
+2- The percentage of coverage.
+
+3- Demonstrate the results
