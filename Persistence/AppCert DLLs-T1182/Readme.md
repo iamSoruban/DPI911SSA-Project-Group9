@@ -55,7 +55,7 @@ Everything is set it up correctly, and now start the BgInfo.exe, it should load 
 ![alt text](https://github.com/iamSoruban/group9_mitre_testcases/blob/iamSoruban-patch-1/Injected%20DLL%20execution.png)
 *Figure 6: BgInfo.exe loaded new DLL*
 
-
+<h1>Detection</h1>
 
 To confirm this, we can use Splunk to analyze.
 ![alt text](https://github.com/iamSoruban/group9_mitre_testcases/blob/iamSoruban-patch-1/BGInfo-exe%20started%20with%20extra%20args.png)
