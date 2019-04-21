@@ -1,5 +1,5 @@
 <h1>Technique Description</h1>
-<h2>T1182 - AppCert DLL</h2>
+<h2>T1087 - Account Discovery</h2>
 <h2><a href="https://attack.mitre.org/techniques/T1087/">Description from ATT&CK</a></h2>
 <blockquote>
  Adversaries may attempt to get a listing of local system or domain accounts.
