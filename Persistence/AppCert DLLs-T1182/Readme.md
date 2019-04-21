@@ -1,16 +1,19 @@
-# group9_mitre_testcases
-<h1>AppCert DLL</h1>
-
-  AppCert DLLs are DLLs that are loaded in the Registry Key (HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager) and loaded into every process to call specific functions, such as:
-  * CreateProcess
+<h1>Technique Description</h1>
+<h2>T1182 - AppCert DLL</h2>
+<h2><a href="https://attack.mitre.org/techniques/T1182/">Description from ATT&CK</a></h2>
+<blockquote>
+ Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager are loaded into every process that calls the ubiquitously used application programming interface (API) functions:
+   * CreateProcess
   * CreateProcessAsUser
   * CreateProcessWithLoginW
   * CreateProcessWithTokenW
   * WinExec
-  
-_(Refer to: https://attack.mitre.org/techniques/T1182/)_
+</blockquote>
 
-When opening a program, usually the program tries to load all its dependencies, which are required to run the program correctly. In this process, some of the DLL files can be miss, but it won’t affect the functionality of the program. But, by using procmon, it is possible to look for the DLLs that the program looking for but couldn’t find. In this case, when starting BgInfo.exe, we can see that there are several DLLs are missing when loading the program, therefore, we can simply place a malicious DLL with the same name in the same path that the program is looking for, this will lead the program to load our DLL instead of providing the error saying “NAME NOT FOUND” (according to Procmon).
+<h1>Assumption</h1>
+Assume that the victim device is already compromised, and able to download files from a web server.
+
+<h1>Execution</h1>
 
 ![alt text](https://github.com/iamSoruban/group9_mitre_testcases/blob/iamSoruban-patch-1/Finding%20the%20missing%20DLL%20name.png)
 *Figure 1: Looking for missing DLL*
@@ -51,7 +54,7 @@ Copy the malicious DLL fie to the same directory that the program expecting the 
 Everything is set it up correctly, and now start the BgInfo.exe, it should load our DLL
 ![alt text](https://github.com/iamSoruban/group9_mitre_testcases/blob/iamSoruban-patch-1/Injected%20DLL%20execution.png)
 *Figure 6: BgInfo.exe loaded new DLL*
-
+<h1>Detection</h1>
 As from the above screenshot, we can see that when running the BgInfo.exe program, our DLL is loaded with it, and as it on the code, it started calc.exe
 To confirm this, we can use Splunk to analyze.
 ![alt text](https://github.com/iamSoruban/group9_mitre_testcases/blob/iamSoruban-patch-1/BGInfo-exe%20started%20with%20extra%20args.png)
