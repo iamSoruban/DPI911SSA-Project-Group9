@@ -54,8 +54,9 @@ Copy the malicious DLL fie to the same directory that the program expecting the 
 Everything is set it up correctly, and now start the BgInfo.exe, it should load our DLL
 ![alt text](https://github.com/iamSoruban/group9_mitre_testcases/blob/iamSoruban-patch-1/Injected%20DLL%20execution.png)
 *Figure 6: BgInfo.exe loaded new DLL*
-<h1>Detection</h1>
-As from the above screenshot, we can see that when running the BgInfo.exe program, our DLL is loaded with it, and as it on the code, it started calc.exe
+
+
+
 To confirm this, we can use Splunk to analyze.
 ![alt text](https://github.com/iamSoruban/group9_mitre_testcases/blob/iamSoruban-patch-1/BGInfo-exe%20started%20with%20extra%20args.png)
 *Figure 7: BgInfo.exe started with extra arguments/parameters*
